@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 
 const About = () => {
   return (
