@@ -1,17 +1,19 @@
 import React from 'react';
 import getConfig from 'next/config';
 
-const Example = ({ gourmet }) => {
+const Example = ({ gourmet ,test}) => {
   return (
     <div>
       <h1>gourmet</h1>
       <div>{JSON.stringify(gourmet)}</div>
+
     </div>
   );
 };
 
-// データ取得準備
+// export async function getStaticProps() {
 export async function getServerSideProps() {
+  // 取得テスト
   const { serverRuntimeConfig } = getConfig();
   const { HOTPEPPER_API_KEY } = serverRuntimeConfig;
   const gourmetUrl = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${HOTPEPPER_API_KEY}&large_area=Z011&format=json`;
@@ -21,6 +23,7 @@ export async function getServerSideProps() {
   return {
     props: {
       gourmet: data,
+      test: gourmetUrl,
     },
   };
 }

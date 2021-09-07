@@ -3,16 +3,16 @@ import Link from 'next/link';
 import { Button } from '@material-ui/core';
 
 const About = () => {
-  return (
-    <>
-      <div>about page</div>
-      <Link href="/">Home</Link>
+    return (
+        <>
+        <div>about page</div>
+        <Link href='/'>Home</Link>
 
-      <Button variant="contained" color="primary">
-        Hello!
-      </Button>
+        <Button variant="contained" color="primary">
+            Hello!
+        </Button>
     </>
-  );
+    )
 };
 
 export default About;
